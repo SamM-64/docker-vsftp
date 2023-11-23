@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  vsftpd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vsftpd
+    ports:
+      - "21:21"
+      - "40000-40100:40000-40100"
+    volumes:
+      - ./data:/home/ftp/sam
+    restart: always
+
+
+
+
+
